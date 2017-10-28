@@ -6,7 +6,7 @@ class Header extends Component{
         return (
             <header className="Header">
                 <div className="wrap">
-                    <h1>Indecision</h1>
+                    <h1>{this.props.title}</h1>
                     <p>Put your life in the hands of a computer.</p>
                 </div>
             </header>
@@ -14,5 +14,9 @@ class Header extends Component{
     }
 
 }
+
+Header.defaultProps = {
+    title: "Indecision"
+};
 
 export default Header;

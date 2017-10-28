@@ -20,11 +20,19 @@ const Footer = (props) => {
 
 class App extends Component {
 
+  componentDidMount(){
+    //console.log("Mounted");
+    // get db
+  }
 
+  componentDidUpdate(prevProps, prevState) {
+    //console.log("Updated");
+    // Update db here
+  }
 
   state = {
     options: (localStorage.getItem('options') !== null) ? JSON.parse(localStorage.getItem('options')) : [{
-      name: 'Eat Mochi',
+      name: 'Learn Javascript',
       active: false,
       done: false
     }],
@@ -51,8 +59,6 @@ class App extends Component {
         return;
       }
     });
-
-
   }
 
   handleRemoveAll = (e) => {
@@ -137,7 +143,7 @@ class App extends Component {
 
   render() {
     return ( <div className = "App" >
-      <Header / >
+      <Header title="My ToDo List" />
       <Action handleRandomOption = {this.handleRandomOption}/> 
       <Options options = {this.state.options}
       inputvalue = {this.state.inputvalue}
@@ -145,7 +151,7 @@ class App extends Component {
       handleAdd = {this.handleAdd}
       handleRemoveItem = {this.handleRemoveItem}
       handleRemoveAll = {this.handleRemoveAll}/>
-      <Footer name="Sonny Tambiac" />
+      <Footer name="Coded by: Sonny Tambiac" />
       </div>
     );
   }
