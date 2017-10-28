@@ -12,7 +12,7 @@ const Footer = (props) => {
   return (
     <footer id="footer">
       <div className="wrap">
-        <p>&copy; {props.year} - {props.name}</p>
+        <p>{props.name}</p>
       </div>
     </footer>
   )
@@ -145,7 +145,7 @@ class App extends Component {
       handleAdd = {this.handleAdd}
       handleRemoveItem = {this.handleRemoveItem}
       handleRemoveAll = {this.handleRemoveAll}/>
-      <Footer name="Sonny Tambiac" year={2017} />
+      <Footer name="Sonny Tambiac" />
       </div>
     );
   }
