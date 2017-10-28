@@ -6,6 +6,17 @@ import Header from './Components/Header';
 import Action from './Components/Action';
 import Options from './Components/Options';
 
+// Stateless Functional Component
+
+const Footer = (props) => {
+  return (
+    <footer id="footer">
+      <div className="wrap">
+        <p>&copy; {props.year} - {props.name}</p>
+      </div>
+    </footer>
+  )
+}
 
 class App extends Component {
 
@@ -133,8 +144,9 @@ class App extends Component {
       handleChange = {this.handleChange}
       handleAdd = {this.handleAdd}
       handleRemoveItem = {this.handleRemoveItem}
-      handleRemoveAll = {this.handleRemoveAll}
-      /> </div>
+      handleRemoveAll = {this.handleRemoveAll}/>
+      <Footer name="Sonny Tambiac" year={2017} />
+      </div>
     );
   }
 }
